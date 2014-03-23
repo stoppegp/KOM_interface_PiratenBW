@@ -123,14 +123,18 @@ input[type=checkbox].switch:checked ~ label#switch_filter_label {
 }
 label.switch-label {
     cursor: pointer;
-    color: #00befe;
 }
 label#switch_filter_label {
     position: absolute;
     margin-right: 5px;
     padding: 5px;
     right: 0;
+    color: #00befe;
 }
+label#switch_filter_label:hover {
+    color: #7eddfc;
+}
+
 
 @media only screen and (max-width: 800px){
 .list .pledge .pledge_row .pledge_status {

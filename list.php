@@ -25,6 +25,8 @@ if (isset(KOM::$active['cat']) && is_array(KOM::$active['cat'])) {
 }
 if (isset(KOM::$active['party']) && is_array(KOM::$active['party'])) {
     $database->setFilter("parties", KOM::$active['party']);
+} else {
+    $database->setFilter("parties", array(1,2,3));
 }
 if (isset(KOM::$active['pst']) && is_array(KOM::$active['pst'])) {
     $database->setFilter("pledgestatetypeids", KOM::$active['pst']);

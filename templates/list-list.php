@@ -5,7 +5,8 @@
         <a href="<?=KOM::dolink("single", array("issueid" => $issue->getID()));?>"><span class="issue"><?=$issue->getName();?></span></a>
         
         <?php
-        foreach (array(3,1,2) as $pid) {
+        foreach ($database->GetParties("order") as $party) {
+            $pid = $party->getID();
             if (is_array($issue->getPledgesOfParty($pid))) {
                 foreach ($issue->getPledgesOfParty($pid) as $pledge) {
                     switch ($pledge->getCurrentPledgeStateType()->getID()) {
@@ -20,14 +21,20 @@
                         case 10: $ampel = array("", "red", "red", "", "", ""); break;  //Nicht umgesetzt
                     }
                     ?>
-                    <a class="pledge" href="<?=KOM::dolink("single", array("issueid" => $issue->getID()));?>#pledge_<?=$pledge->getID();?>"><span class="pledge_row"><span class="pledge_party"><img alt="<?=$pledge->getParty()->getName();?>" src="<?=KOM::$site_url;?>/interface/images/parties/small/<?=$pledge->getParty()->getID();?>.jpg" /></span><span class="pledge_name"><?=$pledge->getName();?></span><span class="pledge_status"><?=$pledge->getCurrentPledgeStateType()->getName();?></span><span class="pledge_ampel"><span class="ampel">
+                    <a class="pledge" href="<?=KOM::dolink("single", array("issueid" => $issue->getID()));?>#pledge_<?=$pledge->getID();?>"><span class="pledge_row"><span class="pledge_party"><img alt="<?=$pledge->getParty()->getName();?>" src="<?=KOM::$site_url;?>/interface/images/parties/small/<?=$pledge->getParty()->getID();?>.jpg" /></span><span class="pledge_name"><?=$pledge->getName();?></span>
+                    <?php
+                    if ($party->getDoValue() == true) {
+                    ?>
+                    <span class="pledge_status"><?=$pledge->getCurrentPledgeStateType()->getName();?></span><span class="pledge_ampel"><span class="ampel">
                     <?php
                     for ($a = 0; $a<=5; $a++) {
                         echo '<span class="ampelelement '.$ampel[$a].'"></span>';
                     }
                     
                     ?>
-                    </span></span></span>
+                    </span></span>
+                    <?php } ?>
+                    </span>
                     
                     </a>
                     <?php

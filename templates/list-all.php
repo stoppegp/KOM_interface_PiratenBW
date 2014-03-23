@@ -19,7 +19,7 @@ foreach ($database->getIssues("name") as $val) {
 }
 ?>
 <div>
-Wir beobachten <?=$pledges;?> Versprechen bei <?php echo count($database->getIssues("name")); ?> Themen. 
+
 <input type="checkbox" <?php echo (is_array(KOM::$active['cat']) || is_array(KOM::$active['party']) || is_array(KOM::$active['pst'])) ? "checked=\"checked\"" : ""; ?> class="switch" id="switch_filter"><label for="switch_filter" id="switch_filter_label" class="switch-label">Filter <?php echo (is_array(KOM::$active['cat']) || is_array(KOM::$active['party']) || is_array(KOM::$active['pst'])) ? "aktiv" : ""; ?></label>
 <div id="filterswitch" class="switch-action">
 <form method="post" action="<?=KOM::doLink("list", null, array("cat", "pst", "party"));?>">
@@ -60,11 +60,21 @@ foreach (KOM::$mainDB->getPledgeStateTypes() as $pst) {
 </div>
 <div id="filter_party">
 <h2>Parteien</h2>
+<h3>Koalition</h3>
 <?php
 foreach (KOM::$mainDB->getParties("name") as $party) {
     if (!$party->getDoValue()) continue;
     ?>
     <input <?php echo (!is_array(KOM::$active['party']) || in_array($party->getID(), KOM::$active['party'])) ? "checked=\"checked\"" : "" ?> type="checkbox" name="party[<?=$party->getID();?>] value="1" id="party_<?=$party->getID();?>"> <label for="party_<?=$party->getID();?>"><?=$party->getName();?></label><br>
+    <?php
+}
+?>
+<h3>Opposition</h3>
+<?php
+foreach (KOM::$mainDB->getParties("name") as $party) {
+    if ($party->getDoValue()) continue;
+    ?>
+    <input <?php echo (is_array(KOM::$active['party']) && in_array($party->getID(), KOM::$active['party'])) ? "checked=\"checked\"" : "" ?> type="checkbox" name="party[<?=$party->getID();?>] value="1" id="party_<?=$party->getID();?>"> <label for="party_<?=$party->getID();?>"><?=$party->getName();?></label><br>
     <?php
 }
 ?>
@@ -76,6 +86,8 @@ foreach (KOM::$mainDB->getParties("name") as $party) {
 </form>
 </div>
 </div>
-
+<p>
+<?=$pledges;?> Versprechen in <?php echo count($database->getIssues("name")); ?> Themen gefunden. 
+</p>
 
 <?php include('list-list.php'); ?>
