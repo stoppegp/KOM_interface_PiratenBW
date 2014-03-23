@@ -13,6 +13,8 @@ $page[1]['title'] = "searchtitle";
 $page[2]['name'] = "statistik";
 $page[2]['file'] = "stats";
 $page[2]['title'] = "Statistik";
+$page[2]['urlrewrite'] = "statsrewrite";
+$page[2]['doLink'] = "statsdolink";
 $page[3]['name'] = "versprechen";
 $page[3]['file'] = "list";
 $page[3]['title'] = "listtitle";
@@ -83,6 +85,44 @@ function singlerewrite($ar) {
     return $active;
 }
 
+
+function statsdolink($ar) {
+    if (isset($ar['stat']) && (in_array($ar['stat'], array("koalitionsvertrag", "gruene", "spd")))) {
+        $url = $ar['stat'];
+    } else {
+        $url = "";
+        if (is_array($ar['cat'])) {
+            $urla['cat'] = "cat=";
+            foreach ($ar['cat'] as $val) {
+                if (is_numeric($val)) {
+                    $urla['cat'] .= $val.",";
+                }
+            }
+        }
+        if (is_array($ar['pst'])) {
+            $urla['pst'] = "pst=";
+            foreach ($ar['pst'] as $val) {
+                if (is_numeric($val)) {
+                    $urla['pst'] .= $val.",";
+                }
+            }
+        }
+        if (is_array($ar['party'])) {
+            $urla['party'] = "party=";
+            foreach ($ar['party'] as $val) {
+                if (is_numeric($val)) {
+                    $urla['party'] .= $val.",";
+                }
+            }
+        }
+        if (is_array($urla)) {
+            $url .= "?".implode("&", $urla);
+        }
+        
+    }
+    return $url;
+}
+
 function listdolink($ar) {
     if (isset($ar['cat']) && is_numeric($ar['cat'])) {
         $url = KOM::filteruri(KOM::$mainDB->getCategory($ar['cat'])->getName())."/";
@@ -130,6 +170,28 @@ function listrewrite($ar) {
         $active['cat'] = $catarray[KOM::filteruri($ar[1])];
     }
     if (substr($ar[1], 0, 1) == "?") {
+        parse_str(substr($ar[1], 1), $gar);
+        if (isset($gar['cat'])) {
+            $active['cat'] = explode(",", $gar['cat']);
+        }
+        if (isset($gar['pst'])) {
+            $active['pst'] = explode(",", $gar['pst']);
+        }
+        if (isset($gar['party'])) {
+            $active['party'] = explode(",", $gar['party']);
+        } 
+    }
+    return $active;
+        
+}
+function statsrewrite($ar) {
+    if (in_array($ar[1], array("koalitionsvertrag", "gruene", "spd"))) {
+        switch ($ar[1]) {
+            case "koalitionsvertrag": $active['stat'] = "koalitionsvertrag"; break;
+            case "gruene": $active['stat'] = "gruene"; break;
+            case "spd": $active['stat'] = "spd"; break;
+        }
+    } elseif (substr($ar[1], 0, 1) == "?") {
         parse_str(substr($ar[1], 1), $gar);
         if (isset($gar['cat'])) {
             $active['cat'] = explode(",", $gar['cat']);
@@ -208,6 +270,8 @@ $sitemap = array(
     array(
         "page"  =>  "stats",
         "text"  =>  "Statistik",
+        "clearargs"  =>  1,
+        "submenu"    =>  "sitemap_stats",
     ),
     array(
         "page"  =>  "custompage",
@@ -231,6 +295,39 @@ $sitemap_wahlversprechen = array(
     array(
         "page"  =>  "list",
         "text"  =>  "Alle Versprechen",
+    ),
+    array(
+        "page"  =>  "gehalten",
+        "text"  =>  "Gehaltene Versprechen",
+    ),
+    array(
+        "page"  =>  "gebrochen",
+        "text"  =>  "Gebrochene Versprechen",
+    ),
+);
+$sitemap_stats = array(
+    array(
+        "page"  =>  "stats",
+        "text"  =>  "Manuell",
+        "clearargs" => true,
+    ),
+    array(
+        "page"  =>  "stats",
+        "text"  =>  "Koalitionsvertrag",
+        "args"  =>  array("stat" => "koalitionsvertrag"),
+        "clearargs" => true,
+    ),
+    array(
+        "page"  =>  "stats",
+        "text"  =>  "Die Grünen",
+        "args"  =>  array("stat" => "gruene"),
+        "clearargs" => true,
+    ),
+    array(
+        "page"  =>  "stats",
+        "text"  =>  "SPD",
+        "args"  =>  array("stat" => "spd"),
+        "clearargs" => true,
     ),
 );
 $sitemap_wahlversprechen_cat = array();
@@ -271,5 +368,6 @@ function getTitle() {
 
 KOM::registerMenu("sitemap", $sitemap);
 KOM::registerMenu("sitemap_wahlversprechen", $sitemap_wahlversprechen);
+KOM::registerMenu("sitemap_stats", $sitemap_stats);
 KOM::registerMenu("sitemap_wahlversprechen_cat", $sitemap_wahlversprechen_cat);
 ?>

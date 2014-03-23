@@ -3,6 +3,7 @@
 $database = new Database(KOM::$dblink);
 
 KOM::registerStyle('interface/css/list.css', true);
+KOM::registerStyle('interface/css/filter.css', true);
 
 if (is_array($_REQUEST['cat'])) {
     KOM::$active['cat'] = array_keys($_REQUEST['cat']);

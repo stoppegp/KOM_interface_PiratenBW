@@ -1,7 +1,48 @@
 <?php
-
+KOM::registerStyle('interface/css/filter.css', true);
+KOM::registerStyle('interface/css/stats.css', true);
 $database = new Database(KOM::$dblink);
-$database->setFilter("parties", array(1,2));
+//$database->setFilter("parties", array(1,2));
+
+if (isset(KOM::$active['stat'])) {
+    switch (KOM::$active['stat']) {
+        case "koalitionsvertrag": $database->setFilter("parties", 3); break;
+        case "gruene": $database->setFilter("parties", 1); break;
+        case "spd": $database->setFilter("parties", 2); break;
+    }
+} else {
+    if (is_array($_REQUEST['cat'])) {
+        KOM::$active['cat'] = array_keys($_REQUEST['cat']);
+    }
+    if (is_array($_REQUEST['party'])) {
+        KOM::$active['party'] = array_keys($_REQUEST['party']);
+    }
+    if (is_array($_REQUEST['pst'])) {
+        KOM::$active['pst'] = array_keys($_REQUEST['pst']);
+    }
+
+    if (isset($_REQUEST['resetfilter'])) {
+        unset(KOM::$active['cat']);
+        unset(KOM::$active['party']);
+        unset(KOM::$active['pst']);
+    }
+
+    if (isset(KOM::$active['cat']) && is_array(KOM::$active['cat'])) {
+        $database->setFilter("categories", KOM::$active['cat']);
+    }
+    if (isset(KOM::$active['party']) && is_array(KOM::$active['party'])) {
+        $database->setFilter("parties", KOM::$active['party']);
+    } else {
+        $database->setFilter("parties", array(1,2,3));
+    }
+    if (isset(KOM::$active['pst']) && is_array(KOM::$active['pst'])) {
+        $database->setFilter("pledgestatetypeids", KOM::$active['pst']);
+    }
+    if (isset(KOM::$active['pstg']) && is_numeric(KOM::$active['pstg'])) {
+        $database->setFilter("pledgestatetypegroup", KOM::$active['pstg']);
+    }
+}
+    
 $database->loadContent();
 
 $ausw = new Analysis($database);

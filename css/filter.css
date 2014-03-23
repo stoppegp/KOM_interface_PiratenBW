@@ -1,0 +1,56 @@
+#filter {
+    display: table;
+    width: 100%;
+}
+#filter_submit {
+    margin: 15px;
+    text-align: right;
+}
+#filter .filter_row {
+    display: table-row;
+}
+#filter .filter_row > div {
+    display: table-cell;
+    white-space: nowrap;
+}
+#filterswitch.switch-action form #filtercontainer {
+    overflow: auto;
+    padding: 15px;
+}
+#filterswitch.switch-action {
+    max-height: 0px;
+    overflow: hidden;
+    height: auto;
+    transition: max-height 1s;
+    background-color: #e6e6e6;
+
+}
+input[type=checkbox].switch {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+input[type=checkbox].switch:checked ~ .switch-action {
+    max-height: 500px !important;
+}
+input[type=checkbox].switch:checked ~ label#switch_filter_label {
+    background-color: #e6e6e6;
+}
+label.switch-label {
+    cursor: pointer;
+}
+label#switch_filter_label {
+    position: absolute;
+    margin-right: 5px;
+    padding: 5px;
+    right: 0;
+    color: #00befe;
+}
+label#switch_filter_label:hover {
+    color: #7eddfc;
+}
