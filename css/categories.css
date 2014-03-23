@@ -3,7 +3,7 @@
 }
 #categoryboxes a.categorybox span.cbtextbox {
     display: block;
-    height: 70%;
+    height: 140px;
     width: 100%;
     padding: 15px;
     padding-top: 40px;
@@ -14,7 +14,7 @@
 }
 #categoryboxes a.categorybox span.cbmeterbox {
     display: block;
-    height: 30%;
+    height: 60px;
     padding-left: 10%;
     padding-right: 10%;
     position: relative;
@@ -141,6 +141,10 @@
 }
 #categoryboxes a.categorybox span.cbtextbox {
     padding-top: 15px;
+    height: 105px;
+}
+#categoryboxes a.categorybox span.cbmeterbox {
+    height: 45px;
 }
 }
 @media only screen and (max-width: 500px){
