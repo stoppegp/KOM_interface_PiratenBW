@@ -4,13 +4,13 @@
     if ($ergI) {
         $c = 0;
         foreach ($ergI as $val) {
-            $newname = preg_replace($searar, "<span class=\"found\">$0</span>", $val->getName());
-            $newdesc = preg_replace($searar, "<span class=\"found\">$0</span>", $val->getDesc());
-            echo "<div class=\"issue\"><a href=\"".KOM::dolink("single", array("issueid" => $val->getID()))."\"><strong>".$newname."</strong><br>".$newdesc."</a></div>";
-            if (++$c > 2) {
+            if (++$c > 3) {
                 echo "<div class=\"issue\"><a href=\"".KOM::dolink("search", array("searchtype" => "issues"))."\">weitere ".(count($ergI)-3)." Ergebnisse anzeigen...</a></div>";
                 break;
             }
+            $newname = preg_replace($searar, "<span class=\"found\">$0</span>", $val->getName());
+            $newdesc = preg_replace($searar, "<span class=\"found\">$0</span>", $val->getDesc());
+            echo "<div class=\"issue\"><a href=\"".KOM::dolink("single", array("issueid" => $val->getID()))."\"><strong>".$newname."</strong><br>".$newdesc."</a></div>";
         }
     } else {
         echo "<div class=\"issue\">Nichts gefunden.</div>";
@@ -21,13 +21,13 @@
     if ($ergP) {
         $c = 0;
         foreach ($ergP as $val) {
-            $newname = preg_replace($searar, "<span class=\"found\">$0</span>", $val->getName());
-            $newdesc = preg_replace($searar, "<span class=\"found\">$0</span>", $val->getDesc());
-            echo "<div class=\"issue\"><a href=\"".KOM::dolink("single", array("issueid" => $val->getIssue()->getID()))."#pledge_".$val->getID()."\">".$val->getIssue()->getName()."<br><strong>".$val->getParty()->getName().": ".$newname."</strong><br>".$newdesc."</a></div>";
-            if (++$c > 2) {
+            if (++$c > 3) {
                 echo "<div class=\"issue\"><a href=\"".KOM::dolink("search", array("searchtype" => "pledges"))."\">weitere ".(count($ergP)-3)." Ergebnisse anzeigen...</a></div>";
                 break;
             }
+            $newname = preg_replace($searar, "<span class=\"found\">$0</span>", $val->getName());
+            $newdesc = preg_replace($searar, "<span class=\"found\">$0</span>", $val->getDesc());
+            echo "<div class=\"issue\"><a href=\"".KOM::dolink("single", array("issueid" => $val->getIssue()->getID()))."#pledge_".$val->getID()."\">".$val->getIssue()->getName()."<br><strong>".$val->getParty()->getName().": ".$newname."</strong><br>".$newdesc."</a></div>";
         }
     } else {
         echo "<div class=\"issue\">Nichts gefunden.</div>";
@@ -38,13 +38,13 @@
     if ($ergS) {
         $c = 0;
         foreach ($ergS as $val) {
-            $newname = preg_replace($searar, "<span class=\"found\">$0</span>", $val->getName());
-            $newquotetext = preg_replace($searar, "<span class=\"found\">$0</span>", $val->getQuoteText());
-            echo "<div class=\"issue\"><a href=\"".KOM::dolink("single", array("issueid" => $val->getIssue()->getID()))."#state_".$val->getID()."\"><strong>".date("d.m.Y", $val->getDatum()).": ".$newname."</strong><br>".$newquotetext."</a></div>";
-            if (++$c > 2) {
+            if (++$c > 3) {
                 echo "<div class=\"issue\"><a href=\"".KOM::dolink("search", array("searchtype" => "states"))."\">weitere ".(count($ergS)-3)." Ergebnisse anzeigen...</a></div>";
                 break;
             }
+            $newname = preg_replace($searar, "<span class=\"found\">$0</span>", $val->getName());
+            $newquotetext = preg_replace($searar, "<span class=\"found\">$0</span>", $val->getQuoteText());
+            echo "<div class=\"issue\"><a href=\"".KOM::dolink("single", array("issueid" => $val->getIssue()->getID()))."#state_".$val->getID()."\"><strong>".date("d.m.Y", $val->getDatum()).": ".$newname."</strong><br>".$newquotetext."</a></div>";
         }
     } else {
         echo "<div class=\"issue\">Nichts gefunden.</div>";
