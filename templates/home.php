@@ -48,7 +48,7 @@
 </div>
 
 <h1>“In der Politik gibt es manchmal keine Gewähr dafür, dass man all seine Ziele erreicht.”</h1>
-<p>Mit diesem Satz zu einem der zentralen Wahlversprechen von Bündnis 90/Die Grünen ließ sich Ministerpräsident Kretschmann erst kürzlich zitieren. Jede Regierung verteilt im Wahlkampf eine lange Liste an Versprechen. Und nicht erst dieses Zitat wirft die Frage auf: Wie viele werden davon wirklich eingehalten?</p>
+<p>Mit diesem Satz zu einem der zentralen Wahlversprechen von Bündnis 90/Die Grünen ließ sich Ministerpräsident Kretschmann zitieren. Jede Regierung verteilt im Wahlkampf eine lange Liste an Versprechen. Und nicht erst dieses Zitat wirft die Frage auf: Wie viele werden davon wirklich eingehalten?</p>
 <p>Die Piratenpartei Baden-Württemberg versucht mit dem Kretschmann-O-Meter eine Antwort auf diese Frage für die Grün-Rote Landesregierung in Baden-Württemberg zu finden. Schlagen Sie nach, wie weit die Umsetzung der zentralen Wahlkampfversprechen bereits fortgeschritten ist und vergleichen Sie den Koalitionsvertrag mit den Positionen von Bündnis 90/Die Grünen, der SPD und der Piratenpartei.</p>
 
 <h1>Fehler entdeckt?</h1>
