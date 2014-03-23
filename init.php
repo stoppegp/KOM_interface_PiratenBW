@@ -56,7 +56,7 @@ function reportrewrite($ar) {
 }
 
 function listtitle() {
-    if (isset(KOM::$active['cat'])) {
+    if (isset(KOM::$active['cat']) && is_numeric(KOM::$active['cat'])) {
         return KOM::$mainDB->getCategory(KOM::$active['cat'])->getName();
     } else {
         return "Alle Versprechen";
@@ -84,10 +84,38 @@ function singlerewrite($ar) {
 }
 
 function listdolink($ar) {
-    if (isset($ar['cat'])) {
+    if (isset($ar['cat']) && is_numeric($ar['cat'])) {
         $url = KOM::filteruri(KOM::$mainDB->getCategory($ar['cat'])->getName())."/";
     } else {
         $url = "";
+        if (is_array($ar['cat'])) {
+            $urla['cat'] = "cat=";
+            foreach ($ar['cat'] as $val) {
+                if (is_numeric($val)) {
+                    $urla['cat'] .= $val.",";
+                }
+            }
+        }
+        if (is_array($ar['pst'])) {
+            $urla['pst'] = "pst=";
+            foreach ($ar['pst'] as $val) {
+                if (is_numeric($val)) {
+                    $urla['pst'] .= $val.",";
+                }
+            }
+        }
+        if (is_array($ar['party'])) {
+            $urla['party'] = "party=";
+            foreach ($ar['party'] as $val) {
+                if (is_numeric($val)) {
+                    $urla['party'] .= $val.",";
+                }
+            }
+        }
+        if (is_array($urla)) {
+            $url .= "?".implode("&", $urla);
+        }
+        
     }
     return $url;
 }
@@ -101,7 +129,18 @@ function listrewrite($ar) {
     if (isset($ar[1]) && in_array(KOM::filteruri($ar[1]), array_keys($catarray))) {
         $active['cat'] = $catarray[KOM::filteruri($ar[1])];
     }
-    
+    if (substr($ar[1], 0, 1) == "?") {
+        parse_str(substr($ar[1], 1), $gar);
+        if (isset($gar['cat'])) {
+            $active['cat'] = explode(",", $gar['cat']);
+        }
+        if (isset($gar['pst'])) {
+            $active['pst'] = explode(",", $gar['pst']);
+        }
+        if (isset($gar['party'])) {
+            $active['party'] = explode(",", $gar['party']);
+        } 
+    }
     return $active;
         
 }
@@ -173,7 +212,7 @@ $sitemap = array(
     array(
         "page"  =>  "custompage",
         "text"  =>  "Info",
-        "args"  => array("custompageid" => 3),
+        "args"  => array("custompageid" => 2),
     ),
     array(
         "page"  =>  "custompage",

@@ -45,6 +45,7 @@ h2 {
     clear: both;
     padding: 8px;
 }
+/* switch */
 input[type=checkbox].switch {
     border: 0;
     clip: rect(0 0 0 0);

@@ -15,7 +15,7 @@ foreach ($database->getPledgestatetypes() as $value) {
         $chart1array[$value->getOrder()]['color'] = $value->getColour();
         $chart1array[$value->getOrder()]['y'] = $curnr[$value->getID()]*$value->getMultipl();
         $temp00 = $database->getGroupsOfPledgestatetype($value->getID());
-        $chart1array[$value->getOrder()]['url'] = KOM::dolink("category", array("pstg" => $temp00[0]));
+        $chart1array[$value->getOrder()]['url'] = KOM::dolink("list", array("pst" => array($value->getID())));
     }
 }
 ksort($chart1array);
@@ -23,7 +23,7 @@ ksort($chart1array);
 $chart = new sto_highchart_parser("ausw_verteilung");
 $chart->options['title']['text'] = "";
 $chart->options['plotOptions']['pie']['animation'] = false;
-
+$chart->activateLinks();
 
 $chart->options['series'][] = array(   'type' => 'pie',
                             'data' => array_values($chart1array),
@@ -55,7 +55,7 @@ foreach ($c2d as $key => $val) {
     $temp00 = array(
         'name' => $database->getPledgestatetype($key)->getName(),
         'color' => $database->getPledgestatetype($key)->getColour(),
-        'url' => KOM::dolink("category", array("pstg" => $temp001[0])),
+        'url' => KOM::dolink("list", array("pst" => array($database->getPledgestatetype($key)->getID()))),
         'fillOpacity' => "0.5",
     );
     if (!array_sum($val) == 0) {
