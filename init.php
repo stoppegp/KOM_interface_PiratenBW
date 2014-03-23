@@ -273,11 +273,11 @@ $sitemap = array(
         "clearargs"  =>  1,
         "submenu"    =>  "sitemap_stats",
     ),
-    array(
+   /* array(
         "page"  =>  "custompage",
         "text"  =>  "Info",
         "args"  => array("custompageid" => 2),
-    ),
+    ),*/
     array(
         "page"  =>  "custompage",
         "text"  =>  "Impressum",
