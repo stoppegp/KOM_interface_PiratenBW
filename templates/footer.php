@@ -3,7 +3,7 @@
             <div id="footer1">
                 <div id="footer-follow">
                     <h1>Folgen Sie uns</h1>
-                    Bleiben Sie mit Facebook und Twitter auf dem Laufenden.
+                    Bleiben Sie mit <a href="https://www.facebook.com/PiratenBW">Facebook</a> und <a href="https://twitter.com/KOM_BW">Twitter</a> auf dem Laufenden.
                 </div>
                 <div id="footer-share">
                     <h1>Diese Seite teilen</h1>
