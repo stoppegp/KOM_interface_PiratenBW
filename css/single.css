@@ -1,0 +1,85 @@
+h2 {
+    display: block;
+    background-color: #4d4d4d;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 15px;
+    padding: 15px;
+    clear: both;
+}
+.list .pledge {
+    font-weight: bold;
+}
+.list .pledge-infos > div, .state-infos > div {
+    display: block;
+    background-color: #e6e6e6;
+    padding-top: 0;
+    margin-top: 5px;
+    clear: both;
+    padding: 8px;
+    overflow: hidden;
+}
+.state {
+    display: block;
+    background-color: #e6e6e6;
+    padding-top: 0;
+    margin-top: 5px;
+    clear: both;
+    padding: 8px;
+    overflow: hidden;
+}
+
+.pledge-infos, .state-infos {
+    max-height: 0px;
+    margin-bottom: 15px;
+    margin-left: 20px;
+    overflow: hidden;
+    transition: max-height 1s;
+}
+.comment {
+    display: block;
+    background-color: #e6e6e6;
+    padding-top: 0;
+    margin-top: 5px;
+    clear: both;
+    padding: 8px;
+}
+input[type=checkbox].switch {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+
+input[type=checkbox].switch:checked ~ .switch-action {
+    max-height: 400px;
+    
+}
+
+input[type=checkbox].switch:target ~ .switch-action {
+    max-height: 400px;
+}
+
+.pledge_quote_quote, .state_quote_quote {
+    font-style: italic;
+    display: block;
+}
+
+label.switch-label {
+    cursor: pointer;
+}
+label.switch-label:hover > span {
+    opacity: .7;
+}
+
+input[type=checkbox].switch:target ~ .switch-label {
+    cursor: auto;
+}
+input[type=checkbox].switch:target ~ .switch-label:hover > span {
+    opacity: 1;
+}

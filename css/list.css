@@ -1,0 +1,85 @@
+.list > a {
+    display: block;
+    
+}
+.list > a:hover {
+    opacity: .7;
+}
+.list .issue {
+    display: block;
+    background-color: #4d4d4d;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 15px;
+    padding: 15px;
+    clear: both;
+}
+
+.list .pledge {
+    display: table;
+    width: 100%;
+    background-color: #e6e6e6;
+    height: 37px;
+    //line-height: 29px;
+    margin-top: 5px;
+    clear: both;
+    padding: 4px;
+    overflow: hidden;
+    color: black;
+}
+.list .pledge .pledge_row {
+    display: table-row;
+}
+.list .pledge  .pledge_row > span {
+   display: table-cell;
+   vertical-align: middle;
+}
+.list .pledge .pledge_party {
+    width: 48px;
+    text-align: left;
+}
+.list .pledge .pledge_party > img {
+    vertical-align: middle;
+}
+.list .pledge .pledge_status {
+    text-align: right;
+    padding-right: 5px;
+}
+.list .pledge .pledge_ampel {
+    width: 70px;
+}
+.list .pledge .ampel {
+    display: block;
+    width: 70px;
+    height: 29px;
+    border: 1px solid #b9b9b9;
+    background-image: linear-gradient(#fcfcfc 0%, #c5c5c5 100%);
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-left: 4px;
+}
+.list .pledge .ampel .ampelelement {
+    display: block;
+    float: left;
+    height: 23px;
+    width: 9px;
+    border: 1px solid #b9b9b9;
+    margin-left: 2px;
+    background-image: linear-gradient(#e1e1e1 0%, #dedede 100%);
+}
+.list .pledge  .ampel .ampelelement.green {
+    background-image: linear-gradient(#65ad3a 0%, #5ea932 100%);
+}
+.list .pledge .ampel .ampelelement.red {
+    background-image: linear-gradient(#df1930 0%, #db1129 100%);
+}
+.found {
+    background-color: #00befe;
+}
+
+@media only screen and (max-width: 800px){
+.list .pledge .pledge_row .pledge_status {
+    display: none;
+}
+}
