@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     }
     
     if ($meldung != "") {
-        mail("kom@ma.stoppe-gp.de", "KOM: Fehler gemeldet", $name."\n".$email."\n\n"."Thema: ".$issuetext."\n\n".$meldung, "From: Kretschmann-O-Meter <kom@piratenpartei-bw.de>");
+        mail(REPORT_MAIL, "KOM: Fehler gemeldet", $name."\n".$email."\n\n"."Thema: ".$issuetext."\n\n".$meldung, "From: Kretschmann-O-Meter <kom@piratenpartei-bw.de>");
         $send_success = true;
     }
     
