@@ -20,8 +20,6 @@ a:hover {
 
 
 
-/* Breadcrumbs */
-
 div#maincontent {
     margin-bottom: 5px;
 }
@@ -30,6 +28,8 @@ div#maincontent h1 {
     font-size: 1.3em;
     text-transform: uppercase;
 }
+
+/* Breadcrumbs */
 
 #breadcrumbs {
     margin-bottom: 5px;
@@ -161,22 +161,6 @@ header#header #pagetitle {
     left: 15px;
     position: absolute;
     
-}
-header#header #pagetitle #maintitle {
-    display: block;
-    margin: 0;
-    padding: 0;
-    color: white;
-    font-size: 3em;
-    visibility: hidden;
-}
-header#header #pagetitle #subtitle {
-    display: block;
-    margin: 0;
-    padding: 0;
-    color: white;
-    font-size: 1.5em;
-    visibility: hidden;
 }
 
 header#header ul#headermenu {
