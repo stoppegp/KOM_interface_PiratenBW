@@ -51,7 +51,7 @@
         $statuses = false;
     }
     
-    include('templates/home.php');
+    include(dirname(__FILE__).'./templates/home.php');
 ?>
 
 <script type="text/javascript">

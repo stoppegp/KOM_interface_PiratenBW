@@ -10,7 +10,7 @@ if (isset(KOM::$active['cat']) && is_numeric(KOM::$active['cat']) && KOM::$mainD
     $database->setFilter("parties", array(1,2,3));
     $database->loadContent();
     $catname = KOM::$mainDB->getCategory(KOM::$active['cat'])->getName();
-    include('templates/list-cat.php');
+    include(dirname(__FILE__).'./templates/list-cat.php');
 } else {
 
     if (is_array($_REQUEST['cat'])) {
@@ -46,7 +46,7 @@ if (isset(KOM::$active['cat']) && is_numeric(KOM::$active['cat']) && KOM::$mainD
 
     $database->loadContent();
     
-    include('templates/list-all.php');
+    include(dirname(__FILE__).'./templates/list-all.php');
 }
 
 

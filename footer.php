@@ -34,5 +34,5 @@
         return $ret;
     }
 
-    include('templates/footer.php');
+    include(dirname(__FILE__).'./templates/footer.php');
 ?>

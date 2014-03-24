@@ -18,9 +18,9 @@ foreach ($database->getIssues("name") as $val) {
     $pledges += count($val->getPledges());
 }
 ?>
-<?php include('filter.php'); ?>
+<?php include(dirname(__FILE__).'./filter.php'); ?>
 <p>
 <?=$pledges;?> Versprechen in <?php echo count($database->getIssues("name")); ?> Themen gefunden. 
 </p>
 
-<?php include('list-list.php'); ?>
+<?php include(dirname(__FILE__).'./list-list.php'); ?>

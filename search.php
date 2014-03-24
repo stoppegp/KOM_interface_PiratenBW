@@ -17,20 +17,20 @@
     $ergI = $search->doSearchIssues();
     $ergP = $search->doSearchPledges();
     $ergS = $search->doSearchStates();   
-    include('templates/search-header.php');
+    include(dirname(__FILE__).'./templates/search-header.php');
     switch (KOM::$active['searchtype']) {
         case "issues":
-            include('templates/search-issues.php');
+            include(dirname(__FILE__).'./templates/search-issues.php');
             break;
         case "pledges":
-            include('templates/search-pledges.php');
+            include(dirname(__FILE__).'./templates/search-pledges.php');
             break;
         case "states":
-            include('templates/search-states.php');
+            include(dirname(__FILE__).'./templates/search-states.php');
             break;
         default:
 
-            include('templates/search.php');
+            include(dirname(__FILE__).'./templates/search.php');
     }
     
 ?>

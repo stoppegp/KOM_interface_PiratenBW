@@ -7,7 +7,7 @@ KOM::registerStyle('interface/css/list.css', true);
 
 $database->loadContent();
 
-include('templates/gehalten.php');
+include(dirname(__FILE__).'./templates/gehalten.php');
 
 
 

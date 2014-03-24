@@ -142,7 +142,7 @@ $chart2->activateLinks("series");
 foreach ($arsno as $val) {
     $chart2->options['series'][] = $val;
 }
-    include('templates/stats.php');
+    include(dirname(__FILE__).'./templates/stats.php');
 
 
 

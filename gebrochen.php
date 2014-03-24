@@ -7,7 +7,7 @@ KOM::registerStyle('interface/css/list.css', true);
 
 $database->loadContent();
 
-include('templates/gebrochen.php');
+include(dirname(__FILE__).'./templates/gebrochen.php');
 
 
 
