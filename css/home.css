@@ -132,7 +132,7 @@
     display: table-cell;
 }
 #chronik .ereignis {
-    //overflow: auto;
+    overflow: auto;
     clear: both;
 }
 #chronik .ereignis .datum {

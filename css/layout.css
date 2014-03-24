@@ -273,7 +273,6 @@ nav.pagenav ul li:first-child {
 }
 nav.pagenav ul li a {
     display: block;
-    //height: 100%;
     width: 100%;
     padding-top: 5px;
     line-height: 29px;
@@ -326,7 +325,6 @@ header#header ul#headermenu {
 }
 header#header ul#headermenu li {
     float: left;
-//    color: white;
 }
 header#header ul#headermenu li:before {
     content: "|";
@@ -356,11 +354,9 @@ nav.pagenav ul {
     border-left: 10px solid #4d4d4d;
 
 }
-nav.pagenav ul li {
-    //height: 34px;
-    
+nav.pagenav ul li {    
     background-color: #e6e6e6;
-        margin-bottom: 1px;
+    margin-bottom: 1px;
 }
 nav.pagenav ul li:last-child {
     margin-bottom: 0;

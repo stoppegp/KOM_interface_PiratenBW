@@ -105,7 +105,7 @@
 }
 #categoryboxes a.categorybox {
     display: table-cell;
-    //width: 245px;
+    width: 245px;
     width: 25%;
     height: 200px;
     background-color: red;
@@ -131,7 +131,7 @@
 }
 #categoryboxes a.categorybox {
     display: block;
-    //width: 245px;
+    width: 245px;
     width: 49%;
     float: left;
     height: 150px;
