@@ -136,6 +136,7 @@ $chart2->options['xAxis']['max'] = $database->getOption("end_datum")."000";
 $chart2->options['xAxis']['type'] = "datetime";
 $chart2->options['yAxis']['min'] = 0;
 $chart2->options['yAxis']['endOnTick'] = false;
+$chart2->options['yAxis']['title']['text'] = "Versprechen";
 $chart2->activateLinks("series");
 
 foreach ($arsno as $val) {
