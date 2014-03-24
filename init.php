@@ -1,6 +1,6 @@
 <?php
 
-require_once(dirname(__FILE__).'/interface/config.php');
+require_once(dirname(__FILE__).'/config.php');
 require_once(dirname(__FILE__).'/helpers/sto_highchart_parser.class.php');
 require_once(dirname(__FILE__).'/helpers/twitter-php/twitter.class.php');
 
