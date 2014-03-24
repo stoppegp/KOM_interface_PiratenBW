@@ -1,5 +1,6 @@
 <?php
 
+require_once('interface/config.php');
 require_once('helpers/sto_highchart_parser.class.php');
 
 $page[0]['name'] = "kategorien";
