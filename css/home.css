@@ -89,7 +89,6 @@
 } 
 #cont1 #chronik {
     width: 665px;
-    border-right: 5px solid white;
     padding: 15px;
     padding-left: 0;
     padding-right: 0;
@@ -147,6 +146,32 @@
 
 #chronik .ereignis .box1 .state {
     font-weight: bold;
+}
+#twitter .twitter-status {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #666;
+}
+#twitter .twitter-status:last-child {
+    border-bottom: none;
+}
+#twitter .twitter-status > span {
+    display: block;
+    margin-bottom: 5px;
+}
+#twitter .twitter-status > span:last-child {
+    margin-bottom: 0;
+}
+#twitter .twitter-status .twitter-title, #twitter .twitter-status .twitter-title a {
+    color: white;
+}
+#twitter .twitter-status .twitter-datum, #twitter .twitter-status .twitter-datum a {
+    color: white;
+    font-size: 0.9em;
+}
+#twitter .twitter-status .twitter-title a:hover, #twitter .twitter-status .twitter-datum a:hover {
+    opacity: .7;
 }
 @media only screen and (min-width: 800px){
 #wkimage #GR_verteilung {

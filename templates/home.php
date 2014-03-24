@@ -39,10 +39,40 @@
         ?>
        </div>
     </div>
-    <div id="twitter"><h1>Twitter</h1>
-    <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/KOM_BW" data-tweet-limit="3" data-chrome="nofooter transparent noheader noscrollbar" data-widget-id="342908377808125953">Tweets von @PiratenBW</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    <div id="twitter" <?php echo (!is_array($statuses)) ? "style=\"display: none;\"" : ""; ?>><h1>Twitter</h1>
+<?php
+	function autolink($str, $attributes=array()) {
+	    $attrs = '';
+	    foreach ($attributes as $attribute => $value) {
+	        $attrs .= " {$attribute}=\"{$value}\"";
+	    }
+	 
+	    $str = ' ' . $str;
+	    $str = preg_replace(
+	        '`([^"=\'>])((http|https|ftp)://[^\s<]+[^\s<\.)])`i',
+	        '$1<a href="$2"'.$attrs.'>$2</a>',
+	        $str
+	    );
+	    $str = substr($str, 1);
+	     
+	    return $str;
+	}
 
+    if (is_array($statuses)) {
+    foreach ($statuses as $key => $status) {
+        if ($status->retweeted_status) $status = $status->retweeted_status;
+            ?>
+            <span class="twitter-status">
+            <span class="twitter-title"><a href="https://twitter.com/<?=$status->user->screen_name;?>"><strong><?=$status->user->name;?></strong> @<?=$status->user->screen_name;?></a></span>
+            <span class="twitter-text"><?php echo autolink($status->text); ?></span>
+            <span class="twitter-datum"><a href="https://twitter.com/<?=$status->user->screen_name;?>/statuses/<?=$status->id_str;?>"><?php echo date("d.m.Y H:i", strtotime($status->created_at)); ?> Uhr</a></span>
+            </span>
+            <?php
+        if ($key >=3) break;
+    }
+    }
+
+?>
     </div>
     </div>
 </div>

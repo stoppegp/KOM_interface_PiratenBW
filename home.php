@@ -44,9 +44,14 @@
          $chart->options['series'][0]['data'][1]['url'] = KOM::dolink("categories", null, null);
          $chart->activateLinks();
         
+    try {
+    $twitter = new Twitter(TWITTER_API_KEY, TWITTER_API_SECRET, TWITTER_ACCESS_TOKEN, TWITTER_ACCESS_SECRET);
+    $statuses = $twitter->request('statuses/user_timeline', 'GET', array('count' => 20));
+    } catch (Exception $e) {
+        $statuses = false;
+    }
+    
     include('templates/home.php');
-    
-    
 ?>
 
 <script type="text/javascript">
