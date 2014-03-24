@@ -11,7 +11,7 @@
 foreach (KOM::$mainDB->getCategories("name") as $cat) {
     if ($cat->getDisabled()) continue;
     ?>
-    <input <?php echo (!is_array(KOM::$active['cat']) || in_array($cat->getID(), KOM::$active['cat'])) ? "checked=\"checked\"" : "" ?> type="checkbox" name="cat[<?=$cat->getID();?>] value="1" id="cat_<?=$cat->getID();?>"> <label for="cat_<?=$cat->getID();?>"><?=$cat->getName();?></label><br>
+    <input <?php echo (!is_array(KOM::$active['cat']) || in_array($cat->getID(), KOM::$active['cat'])) ? "checked=\"checked\"" : "" ?> type="checkbox" name="cat[<?=$cat->getID();?>]" value="1" id="cat_<?=$cat->getID();?>"> <label for="cat_<?=$cat->getID();?>"><?=$cat->getName();?></label><br>
     <?php
 }
 ?>
@@ -23,7 +23,7 @@ foreach (KOM::$mainDB->getCategories("name") as $cat) {
 foreach (KOM::$mainDB->getPledgeStateTypes() as $pst) {
     if ($pst->getType() == 1) continue;
     ?>
-    <input <?php echo (!is_array(KOM::$active['pst']) || in_array($pst->getID(), KOM::$active['pst'])) ? "checked=\"checked\"" : "" ?> type="checkbox" name="pst[<?=$pst->getID();?>] value="1" id="pst_<?=$pst->getID();?>"> <label for="pst_<?=$pst->getID();?>"><?=$pst->getName();?></label><br>
+    <input <?php echo (!is_array(KOM::$active['pst']) || in_array($pst->getID(), KOM::$active['pst'])) ? "checked=\"checked\"" : "" ?> type="checkbox" name="pst[<?=$pst->getID();?>]" value="1" id="pst_<?=$pst->getID();?>"> <label for="pst_<?=$pst->getID();?>"><?=$pst->getName();?></label><br>
     <?php
 }
 ?>
@@ -32,7 +32,7 @@ foreach (KOM::$mainDB->getPledgeStateTypes() as $pst) {
 foreach (KOM::$mainDB->getPledgeStateTypes() as $pst) {
     if ($pst->getType() == 0) continue;
     ?>
-    <input <?php echo (!is_array(KOM::$active['pst']) || in_array($pst->getID(), KOM::$active['pst'])) ? "checked=\"checked\"" : "" ?> type="checkbox" name="pst[<?=$pst->getID();?>] value="1" id="pst_<?=$pst->getID();?>"> <label for="pst_<?=$pst->getID();?>"><?=$pst->getName();?></label><br>
+    <input <?php echo (!is_array(KOM::$active['pst']) || in_array($pst->getID(), KOM::$active['pst'])) ? "checked=\"checked\"" : "" ?> type="checkbox" name="pst[<?=$pst->getID();?>]" value="1" id="pst_<?=$pst->getID();?>"> <label for="pst_<?=$pst->getID();?>"><?=$pst->getName();?></label><br>
     <?php
 }
 ?>
@@ -44,7 +44,7 @@ foreach (KOM::$mainDB->getPledgeStateTypes() as $pst) {
 foreach (KOM::$mainDB->getParties("name") as $party) {
     if (!$party->getDoValue()) continue;
     ?>
-    <input <?php echo (!is_array(KOM::$active['party']) || in_array($party->getID(), KOM::$active['party'])) ? "checked=\"checked\"" : "" ?> type="checkbox" name="party[<?=$party->getID();?>] value="1" id="party_<?=$party->getID();?>"> <label for="party_<?=$party->getID();?>"><?=$party->getName();?></label><br>
+    <input <?php echo (!is_array(KOM::$active['party']) || in_array($party->getID(), KOM::$active['party'])) ? "checked=\"checked\"" : "" ?> type="checkbox" name="party[<?=$party->getID();?>]" value="1" id="party_<?=$party->getID();?>"> <label for="party_<?=$party->getID();?>"><?=$party->getName();?></label><br>
     <?php
 }
 ?>
@@ -56,7 +56,7 @@ if (!$hideOpp==true) {
 foreach (KOM::$mainDB->getParties("name") as $party) {
     if ($party->getDoValue()) continue;
     ?>
-    <input <?php echo (is_array(KOM::$active['party']) && in_array($party->getID(), KOM::$active['party'])) ? "checked=\"checked\"" : "" ?> type="checkbox" name="party[<?=$party->getID();?>] value="1" id="party_<?=$party->getID();?>"> <label for="party_<?=$party->getID();?>"><?=$party->getName();?></label><br>
+    <input <?php echo (is_array(KOM::$active['party']) && in_array($party->getID(), KOM::$active['party'])) ? "checked=\"checked\"" : "" ?> type="checkbox" name="party[<?=$party->getID();?>]" value="1" id="party_<?=$party->getID();?>"> <label for="party_<?=$party->getID();?>"><?=$party->getName();?></label><br>
     <?php
 }
 }

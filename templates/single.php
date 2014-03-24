@@ -137,7 +137,7 @@ foreach ($issue->getStates("datum", "DESC") as $state) {
     ?>
     <div>
     <input type="checkbox" class="switch" id="state_<?=$state->getID();?>"><label class="switch-label" for="state_<?=$state->getID();?>" onclick="">
-    <span class="state"><?php echo date("d.m.Y", $state->getDatum()); ?>: <strong><?php echo $state->getName(); ?></strong>
+    <span class="state"><?php echo date("d.m.Y", $state->getDatum()); ?>: <strong><?php echo $state->getName(); ?></strong></span>
     </label>
     <div class="switch-action state-infos">
                     <div class="state_quote">

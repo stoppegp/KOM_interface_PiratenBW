@@ -8,7 +8,7 @@ if ($send_success) {
 ?>
 <form method="post">
 <p><strong>Name:</strong><br><input type="text" name="name" id="name" style="width:100%;max-width:300px;"></p>
-<p><strong>E-Mail:</strong><br><input type="text" name="email" id="name" style="width:100%;max-width:300px;"></p>
+<p><strong>E-Mail:</strong><br><input type="text" name="email" id="email" style="width:100%;max-width:300px;"></p>
 <select name="issue" style="max-width: 300px;width:100%;">
 <optgroup label="Allgemein">
 <option <?php echo (KOM::$active['issueid'] ? "" : "selected=\"selected\""); ?> value="0">Allgemein</option>

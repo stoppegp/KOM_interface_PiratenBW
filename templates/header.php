@@ -35,7 +35,7 @@
     <div id="main">
         <header id="header">
         <div id="pagetitle">
-        <a href="<?=KOM::dolink("home", null, true);?>"><img width="497" height="73" src="<?=KOM::$site_url;?>/interface/images/title.png"></a>
+        <a href="<?=KOM::dolink("home", null, true);?>"><img alt="Kretschmann-O-Meter" width="497" height="73" src="<?=KOM::$site_url;?>/interface/images/title.png"></a>
         </div>
         <ul id="headermenu">
             <?php

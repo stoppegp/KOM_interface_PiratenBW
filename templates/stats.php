@@ -32,5 +32,5 @@ if (!isset(KOM::$active['stat'])) { ?>
 <li><?=$ausw->getNumberOfPledges(false);?> Versprechen</li>
 <li><?=count($database->getIssues());?> Themen</li>
 </ul>
-<div style="margin-top:20px;"id="ausw_verteilung"></div>
+<div style="margin-top:20px;" id="ausw_verteilung"></div>
 <div id="ausw_verlauf"></div>
