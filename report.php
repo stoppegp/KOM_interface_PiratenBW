@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 <?php
 
-    include(dirname(__FILE__).'./templates/report.php');
+    include(dirname(__FILE__).'/templates/report.php');
 
 
 

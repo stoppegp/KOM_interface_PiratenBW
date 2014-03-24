@@ -15,4 +15,4 @@
 </nav>
 <h1>Kategorie: <?=$catname;?></h1>
 
-<?php include(dirname(__FILE__).'./list-list.php'); ?>
+<?php include(dirname(__FILE__).'/list-list.php'); ?>

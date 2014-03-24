@@ -17,7 +17,7 @@ $databaseOP->loadContent();
 $issue = $database->getIssue(KOM::$active['issueid']);
 $issueOP = $databaseOP->getIssue(KOM::$active['issueid']);
 
-include(dirname(__FILE__).'./templates/single.php');
+include(dirname(__FILE__).'/templates/single.php');
 
 
 

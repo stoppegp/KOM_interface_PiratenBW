@@ -13,4 +13,4 @@
     </ul></div>
 </nav>
 
-<?php include(dirname(__FILE__).'./list-list.php'); ?>
+<?php include(dirname(__FILE__).'/list-list.php'); ?>

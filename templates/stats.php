@@ -25,7 +25,7 @@
 
 <?php
 if (!isset(KOM::$active['stat'])) { ?>
-<div style="overflow:auto;"><?php $hideOpp=true; include(dirname(__FILE__).'./filter.php'); ?></div>
+<div style="overflow:auto;"><?php $hideOpp=true; include(dirname(__FILE__).'/filter.php'); ?></div>
 <?php
 } ?>
 <ul>

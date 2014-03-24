@@ -1,3 +1,3 @@
 <?php
-    include(dirname(__FILE__).'./templates/header.php');
+    include(dirname(__FILE__).'/templates/header.php');
 ?>

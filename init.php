@@ -1,8 +1,8 @@
 <?php
 
-require_once('interface/config.php');
-require_once('helpers/sto_highchart_parser.class.php');
-require_once('helpers/twitter-php/twitter.class.php');
+require_once(dirname(__FILE__).'/interface/config.php');
+require_once(dirname(__FILE__).'/helpers/sto_highchart_parser.class.php');
+require_once(dirname(__FILE__).'/helpers/twitter-php/twitter.class.php');
 
 $page[0]['name'] = "kategorien";
 $page[0]['file'] = "categories";
