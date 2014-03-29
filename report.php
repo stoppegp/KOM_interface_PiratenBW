@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     }
     
     if ($meldung != "") {
-        mail(REPORT_EMAIL, "KOM: Fehler gemeldet", $name."\n".$email."\n\n"."Thema: ".$issuetext."\n\n".$meldung, "From: Kretschmann-O-Meter <kom@piratenpartei-bw.de>\nContent-type: text/plain; charset=UTF-8");
+        mail(REPORT_EMAIL, "KOM: Fehler gemeldet", $name."\n".$email."\n\n"."Thema: ".$issuetext."\n\n".$meldung, "From: Kretschmann-O-Meter <kom@piratenpartei-bw.de>\nContent-type: text/plain; charset=UTF-8\nReply-To: $email\n");
         $send_success = true;
     }
     
