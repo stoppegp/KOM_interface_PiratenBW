@@ -19,7 +19,7 @@
     padding: 15px;
     margin: -15px;
 }
-.search .issue a:hover {
+.search .issue a:hover, .search .issue a:focus {
     background-color: #DBDBDB;
 }
 .found {

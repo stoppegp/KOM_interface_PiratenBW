@@ -2,7 +2,7 @@
     display: block;
     
 }
-.list > a:hover {
+.list > a:hover, .list > a:focus {
     opacity: .7;
 }
 .list .issue {

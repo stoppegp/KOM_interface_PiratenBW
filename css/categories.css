@@ -1,4 +1,4 @@
-#categoryboxes a.categorybox:hover {
+#categoryboxes a.categorybox:hover, #categoryboxes a.categorybox:focus {
     opacity: .7;
 }
 #categoryboxes a.categorybox span.cbtextbox {

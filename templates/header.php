@@ -29,6 +29,7 @@
         });
 
         </script>
+        <?php echo KOM::getScripts(); ?>
         <?php echo KOM::getStyles(); ?>
     </head>
     <body>

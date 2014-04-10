@@ -38,7 +38,7 @@
     height: 100%;
     color: white;
 }
-#buttons a:hover {
+#buttons a:hover, #buttons a:focus {
     background-color: #7eddfc;
 }
 #buttons > div .img {
@@ -121,7 +121,7 @@
     padding-top: 8px;
     padding-bottom: 8px;
 }
-#chronik .ereignis a:hover {
+#chronik .ereignis a:hover, #chronik .ereignis a:focus {
     background-color: #737373;
 }
 #chronik .ereignis a .ereignis_row {
@@ -170,7 +170,8 @@
     color: white;
     font-size: 0.9em;
 }
-#twitter .twitter-status .twitter-title a:hover, #twitter .twitter-status .twitter-datum a:hover {
+#twitter .twitter-status .twitter-title a:hover, #twitter .twitter-status .twitter-datum a:hover,
+#twitter .twitter-status .twitter-title a:focus, #twitter .twitter-status .twitter-datum a:focus {
     opacity: .7;
 }
 @media only screen and (min-width: 800px){

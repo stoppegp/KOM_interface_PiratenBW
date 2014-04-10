@@ -23,7 +23,7 @@
     height: auto;
     transition: max-height 1s;
     background-color: #e6e6e6;
-
+    display: none;
 }
 input[type=checkbox].switch {
     border: 0;
@@ -35,8 +35,12 @@ input[type=checkbox].switch {
     padding: 0;
     position: absolute;
 }
+input[type=checkbox].switch:focus ~ label#switch_filter_label {
+    background-color: #e6e6e6;
+}
 input[type=checkbox].switch:checked ~ .switch-action {
-    max-height: 500px !important;
+    display: block !important;
+    max-height: 600px !important;
 }
 input[type=checkbox].switch:checked ~ label#switch_filter_label {
     background-color: #e6e6e6;

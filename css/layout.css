@@ -14,7 +14,7 @@ a {
     text-decoration: none;
     color: #00befe;
 }
-a:hover {
+a:hover, a:focus {
     color: #7eddfc;
 }
 
@@ -80,7 +80,7 @@ footer#footer #footer1 {
     font-size: 1.2em;
     margin-top: 15px;
 }
-#footer1 #footer-report a#reportbutton:hover {
+#footer1 #footer-report a#reportbutton:hover, #footer1 #footer-report a#reportbutton:focus  {
     background-color: #7eddfc;
 }
 #footer1:after {
@@ -264,7 +264,7 @@ nav.pagenav ul li {
 nav.pagenav ul li:first-child, nav.pagenav ul li:last-child {
     border: none;
 }
-nav.pagenav ul li a.active, nav.pagenav ul li a:hover {
+nav.pagenav ul li a.active, nav.pagenav ul li a:hover, nav.pagenav ul li a:focus {
     background-color: #4d4d4d;
     color: white;
 }
@@ -366,7 +366,7 @@ nav.pagenav ul li a {
     color: black;
     padding: 8px;
 }
-nav.pagenav ul li a.active, nav.pagenav ul li a:hover {
+nav.pagenav ul li a.active, nav.pagenav ul li a:hover, nav.pagenav ul li a:focus  {
     background-color: #4d4d4d;
     color: white;
 }
