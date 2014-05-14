@@ -46,7 +46,7 @@ h2 {
     padding: 8px;
 }
 /* switch */
-input[type=checkbox].switch {
+input[type=checkbox].switch, input[type=checkbox].tabswitch {
     border: 0;
     clip: rect(0 0 0 0);
     height: 1px;
@@ -57,10 +57,15 @@ input[type=checkbox].switch {
     position: absolute;
 }
 
-input[type=checkbox].switch:checked ~ .switch-action, input[type=checkbox].switch:focus ~ .switch-action {
+input[type=checkbox].switch:checked ~ .switch-action {
     max-height: 400px;
     
 }
+input[type=checkbox].tabswitch:focus ~ .switch-action {
+    max-height: 400px;
+    
+}
+
 
 input[type=checkbox].switch:target ~ .switch-action {
     max-height: 400px;
@@ -74,7 +79,10 @@ input[type=checkbox].switch:target ~ .switch-action {
 label.switch-label {
     cursor: pointer;
 }
-label.switch-label:hover > span, input[type=checkbox].switch:focus ~ label.switch-label > span {
+label.switch-label:hover > span {
+    opacity: .7;
+}
+input[type=checkbox].tabswitch:focus ~ label.switch-label > span {
     opacity: .7;
 }
 

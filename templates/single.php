@@ -40,7 +40,7 @@ if ($issue->getDesc()) {
                     }
                     ?>
                     <div>
-                    <input type="checkbox" class="switch" id="pledge_<?=$pledge->getID();?>"><label class="switch-label" for="pledge_<?=$pledge->getID();?>" onclick=""><span class="pledge"><span class="pledge_row"><span class="pledge_party"><img alt="<?=$pledge->getParty()->getName();?>" src="<?=KOM::$site_url;?>/interface/images/parties/small/<?=$pledge->getParty()->getID();?>.jpg" /></span><span class="pledge_name">
+                    <input type="checkbox" class="tabswitch" id="tab_pledge_<?=$pledge->getID();?>"><input tabindex="-1" type="checkbox" class="switch" id="pledge_<?=$pledge->getID();?>"><label class="switch-label" for="pledge_<?=$pledge->getID();?>" onclick=""><span class="pledge"><span class="pledge_row"><span class="pledge_party"><img alt="<?=$pledge->getParty()->getName();?>" src="<?=KOM::$site_url;?>/interface/images/parties/small/<?=$pledge->getParty()->getID();?>.jpg" /></span><span class="pledge_name">
                     <?=$pledge->getName();?></span><span class="pledge_status"><?=$pledge->getCurrentPledgeStateType()->getName();?></span><span class="pledge_ampel"><span class="ampel">
                     <?php
                     for ($a = 0; $a<=5; $a++) {
@@ -101,7 +101,7 @@ if ($issueOP && is_array($issueOP->getPledges()) && (count($issueOP->getPledges(
                 foreach ($issueOP->getPledgesOfParty($pid) as $pledge) {
                     ?>
                     <div>
-                    <input type="checkbox" class="switch" id="pledge_<?=$pledge->getID();?>"><label class="switch-label" for="pledge_<?=$pledge->getID();?>" onclick=""><span class="pledge"><span class="pledge_row"><span class="pledge_party"><img alt="<?=$pledge->getParty()->getName();?>" src="<?=KOM::$site_url;?>/interface/images/parties/small/<?=$pledge->getParty()->getID();?>.jpg" /></span><span class="pledge_name">
+                    <input type="checkbox" class="tabswitch" id="tab_pledge_<?=$pledge->getID();?>"><input tabindex="-1" type="checkbox" class="switch" id="pledge_<?=$pledge->getID();?>"><label class="switch-label" for="pledge_<?=$pledge->getID();?>" onclick=""><span class="pledge"><span class="pledge_row"><span class="pledge_party"><img alt="<?=$pledge->getParty()->getName();?>" src="<?=KOM::$site_url;?>/interface/images/parties/small/<?=$pledge->getParty()->getID();?>.jpg" /></span><span class="pledge_name">
                     <?=$pledge->getName();?></span>
                     </span></span></label>
                     <div class="switch-action pledge-infos" id="switch-action-p<?=$pledge->getID();?>">
@@ -146,7 +146,7 @@ if ($issueOP && is_array($issueOP->getPledges()) && (count($issueOP->getPledges(
 foreach ($issue->getStates("datum", "DESC") as $state) {
     ?>
     <div>
-    <input type="checkbox" class="switch" id="state_<?=$state->getID();?>"><label class="switch-label" for="state_<?=$state->getID();?>" onclick="">
+    <input type="checkbox" class="tabswitch" id="tab_state_<?=$state->getID();?>"><input tabindex="-1" type="checkbox" class="switch" id="state_<?=$state->getID();?>"><label class="switch-label" for="state_<?=$state->getID();?>" onclick="">
     <span class="state"><?php echo date("d.m.Y", $state->getDatum()); ?>: <strong><?php echo $state->getName(); ?></strong></span>
     </label>
     <div class="switch-action state-infos" id="switch-action-s<?=$state->getID();?>">
